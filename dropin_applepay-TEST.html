@@ -106,11 +106,14 @@
               // 获取卡标识 paymentToken 
               var paymentToken = response.data.paymentToken;
               console.log("paymentToken:" + paymentToken);
-              
+
+				//支付成功，ApplePay控件消失
+              applepay.emit('paySuccess');
               // 显示 token
               document.getElementById('tokenValue').textContent = paymentToken;
               document.getElementById('tokenDisplay').style.display = 'block';
-              
+
+				
               // 调用PayerMax orderAndPay接口发起支付
              // orderAndPay()
               
